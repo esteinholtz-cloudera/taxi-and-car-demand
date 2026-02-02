@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# uv
+uv.lock
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data files (large datasets)
+data/
+*.csv
+*.parquet
+*.json
+!kaggle.json
+
+# Kaggle credentials (IMPORTANT: Never commit!)
+kaggle.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Plots and outputs
+*.png
+*.jpg
+*.pdf
+!figures/*.png
+!figures/*.jpg
+
+# Logs
+*.log

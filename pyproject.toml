@@ -1,0 +1,76 @@
+[project]
+name = "taxi-car-price-analysis"
+version = "1.0.0"
+description = "Analyze correlation between NYC taxi demand and used car prices in NY"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+keywords = ["data-analysis", "taxi", "car-prices", "correlation", "spark", "pandas"]
+
+# Core dependencies (used in both modes)
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "plotly>=5.14.0",
+    "kaggle>=1.5.0",
+]
+
+[project.optional-dependencies]
+# Laptop mode: Additional dependencies for Pandas-only deployment
+laptop = [
+    "pyarrow>=12.0.0",
+    "fastparquet>=2023.4.0",
+]
+
+# Cloud mode: Additional dependencies for Spark deployment
+cloud = [
+    "pyspark>=3.3.0",
+    "opendatasets>=0.1.0",
+]
+
+# Development dependencies
+dev = [
+    "jupyter>=1.0.0",
+    "ipykernel>=6.20.0",
+    "ipywidgets>=8.0.0",
+    "notebook>=7.0.0",
+]
+
+# All dependencies (for convenience)
+all = [
+    "kaggle>=1.5.0",
+    "pyarrow>=12.0.0",
+    "fastparquet>=2023.4.0",
+    "pyspark>=3.3.0",
+    "opendatasets>=0.1.0",
+    "jupyter>=1.0.0",
+    "ipykernel>=6.20.0",
+    "ipywidgets>=8.0.0",
+    "notebook>=7.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/taxi-car-price-analysis"
+Repository = "https://github.com/yourusername/taxi-car-price-analysis"
+Documentation = "https://github.com/yourusername/taxi-car-price-analysis/blob/main/README.md"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+# UV-specific configuration
+dev-dependencies = [
+    "jupyter>=1.0.0",
+    "ipykernel>=6.20.0",
+    "ipywidgets>=8.0.0",
+    "notebook>=7.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
